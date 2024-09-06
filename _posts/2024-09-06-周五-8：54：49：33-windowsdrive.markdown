@@ -28,6 +28,8 @@ E盘干掉。因为知道是什么文件。
 终于只有一个C盘了，然后把3个文件夹合成一个。但这个时候，里面的软件出了问题，因为路径变了，，，
 呃我先是写了一个.ps1文件修复了一些快捷方式，，具体内容如下:
 
+
+{% include copyheader.html %}
 ```
 <p>
  foreach ($file in Get-ChildItem -Recurse *lnk)
@@ -50,7 +52,7 @@ $Shortcut.Save()
 加入几个值，但我试了半天，得有一个多小时，根本没用啊，哥们。。。。
 还有就是用一个命令就这样，把下面的写到.reg文件中运行就可以。但经我测试太慢了，得开机到桌面还要等几秒，不好用。。。
 
-
+{% include copyheader.html %}
 ```
 <p>
 	REGEDIT4 
@@ -64,7 +66,7 @@ $Shortcut.Save()
 
 然后用这个powershell 
 
-
+{% include copyheader.html %}
 ```New-PSDrive -Name "D" -PSProvider "FileSystem" -Root "\\localhost\c$\Build" -Persist```
 
 
