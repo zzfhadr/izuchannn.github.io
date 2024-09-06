@@ -31,7 +31,7 @@ E盘干掉。因为知道是什么文件。
 
 {% include copyheader.html %}
 ```
-<p>
+
  foreach ($file in Get-ChildItem -Recurse *lnk)
 {   
      $Shortcut = (New-Object -COM WScript.Shell).CreateShortcut($file.FullName)
@@ -42,7 +42,7 @@ $Shortcut.TargetPath()="C:\Program_My\"+$use
 $Shortcut.Save()
 }   
 }
-</p>
+
 ```
 
 
@@ -54,13 +54,13 @@ $Shortcut.Save()
 
 {% include copyheader.html %}
 ```
-<p>
+
 	REGEDIT4 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run] 
 "D Drive"="subst D: C:\\Program_My" 
 "E Drive"="subst E: C:\\Program_My" 
 "F Drive"="subst F: C:\\Program_My" 
-</p>
+
 ```
 
 
