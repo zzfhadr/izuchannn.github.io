@@ -11,3 +11,56 @@ title: "windowsdrive"
 ## after
 
 ![a](/eeee/image.png)
+
+## now
+
+![a](/eeee/wezxcv.png)
+
+
+using EaseUS Partition Master v18.8.0 Unlimited WinPE [ ](magnet:?xt=urn:btih:4405fe23d3bd582263e8f7dcfa4aa63a5e54dae0&dn=EaseUS%20Partition%20Master%20v18.8.0%20Unlimited%20WinPE%20-%20%5BhaxNode%5D&tr=http%3A%2F%2Fp4p.arenabg.com%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337%2Fannounce&tr=https%3A%2F%2Ftracker.gbitt.info%3A443%2Fannounce&tr=http%3A%2F%2Ftracker.gbitt.info%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker-udp.gbitt.info%3A80%2Fannounce&tr=udp%3A%2F%2Fopentracker.io%3A6969%2Fannounce&tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.tryhackx.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.0x7c0.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftamas3.ynh.fr%3A6969%2Fannounce&tr=udp%3A%2F%2Frun.publictracker.xyz%3A6969%2Fannounce&tr=udp%3A%2F%2Fretracker01-msk-virt.corbina.net%3A80%2Fannounce&tr=udp%3A%2F%2Fretracker.lanta.me%3A2710%2Fannounce&tr=udp%3A%2F%2Foh.fuuuuuck.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fmoonburrow.club%3A6969%2Fannounce&tr=udp%3A%2F%2Fexplodie.org%3A6969%2Fannounce&tr=udp%3A%2F%2Fepider.me%3A6969%2Fannounce&tr=udp%3A%2F%2F47.ip-51-68-199.eu%3A6969%2Fannounce&tr=udp%3A%2F%2F9.rarbg.me%3A2780%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2710%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2730%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2920%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Fopentracker.i2p.rocks%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.cyberia.is%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.dler.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.internetwarriors.net%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=udp%3A%2F%2Ftracker.pirateparty.gr%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.tiny-vps.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce).
+
+then a usb drive do something using rufus-4.5..(ez)
+
+reboot F2 choose usb drive
+
+然后就是傻瓜式操作。等着就行了，中途出了小问题，E盘中有文件无法移动，开机，看一眼，再用F2进那个USB，这次直接把
+E盘干掉。因为知道是什么文件。
+终于只有一个C盘了，然后把3个文件夹合成一个。但这个时候，里面的软件出了问题，因为路径变了，，，
+呃我先是写了一个.ps1文件修复了一些快捷方式，，具体内容如下:
+<code>
+ foreach ($file in Get-ChildItem -Recurse *lnk)
+{
+    
+     $Shortcut = (New-Object -COM WScript.Shell).CreateShortcut($file.FullName)
+$nouse,$use=($Shortcut.TargetPath() -split ':\\')
+if(($nouse -eq 'D') -or ($nouse -eq 'E')-or ($nouse -eq 'F'))
+{
+$Shortcut.TargetPath()="C:\Program_My\"+$use
+$Shortcut.Save()
+}
+     
+}
+</code>
+但是还有更多的地方一团糟，尤其是注册表，然后我就想弄就假位置，假分区就可以解决问题了，遂
+查了半天，找到了几种方法，有人说直接编辑注册表的这个位置[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\DOS Devices]加入几个值，但我试了半天，得有一个多小时，根本没用啊，哥们。。。。
+还有就是用一个命令就这样，把下面的写到.reg文件中运行就可以。但经我测试太慢了，得开机到桌面还要等几秒，不好用。。。
+<code>
+	REGEDIT4
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run]
+"D Drive"="subst D: C:\\Program_My"
+"E Drive"="subst E: C:\\Program_My"
+"F Drive"="subst F: C:\\Program_My"
+	<code/>
+然后用这个powershell 
+<code>
+New-PSDrive -Name "D" -PSProvider "FileSystem" -Root "\\localhost\c$\Build" -Persist
+</code>
+
+这个我试最先试的，后来试别的想把它删掉，又费了不少功夫，这玩意根本删不掉，请神容易送神难。。。。
+最后找了半天用这个可以（Remove-SmbMapping -LocalPath "K:" -Force）
+
+折腾半天，最后还是用了那个PSDRIVE命令，而且我发现powershell的命令的选项好长啊，-force -xxxxxxxxxx还不能简写。。。无语子。但是powershell处理字符和那么输入输入流好方便，比CMD强太多了。。。不过我还是更喜欢用CMD，。，。，
+
+哦这事还没完，第二天我又发现我的VMWARE报废了，虚拟机打不开，。。。又重下了，不过现在VMWARE免费了（个人使用）不用搞破解版，不然
+又得麻烦死。。。
+最后我想说Cygwin这个真好用啊。。。安装Linux中的东西。。好用，，，。而且能用一些Linux命令真爽。。windows 命令真弱智有时候。。。

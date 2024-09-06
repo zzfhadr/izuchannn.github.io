@@ -1,3 +1,1 @@
-git add *
-git commit -m "autobatscriptdoupdateforme"
-git push -u origin main
+bundle exec jekyll build && git add * && git commit -m "autobatscriptdoupdateforme" && git push -u origin main
