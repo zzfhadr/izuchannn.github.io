@@ -37,8 +37,7 @@ if(($nouse -eq 'D') -or ($nouse -eq 'E')-or ($nouse -eq 'F'))
 {
 $Shortcut.TargetPath()="C:\Program_My\"+$use
 $Shortcut.Save()
-}
-     
+}   
 }
 ``
 
