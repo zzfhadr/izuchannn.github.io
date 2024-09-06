@@ -29,6 +29,7 @@ E盘干掉。因为知道是什么文件。
 呃我先是写了一个.ps1文件修复了一些快捷方式，，具体内容如下:
 
 ```
+<p>
  foreach ($file in Get-ChildItem -Recurse *lnk)
 {   
      $Shortcut = (New-Object -COM WScript.Shell).CreateShortcut($file.FullName)
@@ -39,6 +40,7 @@ $Shortcut.TargetPath()="C:\Program_My\"+$use
 $Shortcut.Save()
 }   
 }
+</p>
 ```
 
 
