@@ -50,11 +50,13 @@ $Shortcut.Save()
 
 
 ```
+<p>
 	REGEDIT4 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run] 
 "D Drive"="subst D: C:\\Program_My" 
 "E Drive"="subst E: C:\\Program_My" 
 "F Drive"="subst F: C:\\Program_My" 
+</p>
 ```
 
 
