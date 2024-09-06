@@ -1,3 +1,3 @@
 git add ..\*
 git commit -m "autobatscriptdoupdateforme"
-git push -u origin gh-pages
+git push -u origin main
