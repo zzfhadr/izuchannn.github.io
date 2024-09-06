@@ -28,7 +28,7 @@ E盘干掉。因为知道是什么文件。
 终于只有一个C盘了，然后把3个文件夹合成一个。但这个时候，里面的软件出了问题，因为路径变了，，，
 呃我先是写了一个.ps1文件修复了一些快捷方式，，具体内容如下:
 
-' foreach ($file in Get-ChildItem -Recurse *lnk)
+` foreach ($file in Get-ChildItem -Recurse *lnk)
 {   
      $Shortcut = (New-Object -COM WScript.Shell).CreateShortcut($file.FullName)
 $nouse,$use=($Shortcut.TargetPath() -split ':\\')
@@ -38,7 +38,7 @@ $Shortcut.TargetPath()="C:\Program_My\"+$use
 $Shortcut.Save()
 }
      
-}'
+}`
 
 
 但是还有更多的地方一团糟，尤其是注册表，然后我就想弄就假位置，假分区就可以解决问题了，遂
@@ -48,17 +48,17 @@ $Shortcut.Save()
 还有就是用一个命令就这样，把下面的写到.reg文件中运行就可以。但经我测试太慢了，得开机到桌面还要等几秒，不好用。。。
 
 
-'	REGEDIT4 
+`	REGEDIT4 
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run] 
 "D Drive"="subst D: C:\\Program_My" 
 "E Drive"="subst E: C:\\Program_My" 
-"F Drive"="subst F: C:\\Program_My" '
+"F Drive"="subst F: C:\\Program_My" `
 
 
 然后用这个powershell 
 
 
-'New-PSDrive -Name "D" -PSProvider "FileSystem" -Root "\\localhost\c$\Build" -Persist'
+`New-PSDrive -Name "D" -PSProvider "FileSystem" -Root "\\localhost\c$\Build" -Persist`
 
 
 这个我试最先试的，后来试别的想把它删掉，又费了不少功夫，这玩意根本删不掉，请神容易送神难。。。。
