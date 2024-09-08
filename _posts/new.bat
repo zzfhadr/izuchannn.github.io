@@ -12,4 +12,4 @@ echo --- >> "%path23%\%middeel:.=：%-%1.md"
 echo # %middeel:.=：% >>  "%path23%\%middeel:.=：%-%1.md"
 
 @rem "F:\Microsoft VS Code\Code.exe" "%middeel:.=：%-%1.md"
-"F:\Sublime Text\sublime_text.exe" "%middeel:.=：%-%1.md"
+start "F:\Sublime Text\sublime_text.exe" "%middeel:.=：%-%1.md"
