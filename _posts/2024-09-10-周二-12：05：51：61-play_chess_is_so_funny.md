@@ -7,9 +7,6 @@ title: "play_chess_is_so_funny"
 ## play chinese chess is so ffking funny
 
 i'm laughing to death right now. hahahahaha, 🤣🤣🤣🤣🤣🤣🤣🤣..
-
-<video controls>
-	<source src="/assets/2024-09-10-12-10-13.webm"  width="1280" height="720" type="video/webm">
-</video>
+<iframe width="420" height="315" src="/assets/2024-09-10-12-10-13.webm"  frameborder="0" allowfullscreen></iframe>
 
 .haha. In fact, before the game. I tell myself. If i lose, I will go outside buy some supply. I was meant to lose or i would like to lose. beacuase actually supply is runing out. And I just play some strange move, at that time, i thought i was almost lose, beacuse my time is runing out. the game i play have 10 mins to think. I played so slow, so my time is in short. And I found the stuation is bad for me. So i just goes like "whatever, i will eat some his chesses", then it goes very well. He just give up, and I won. HAHAHAHAHA, i'm not even took down his king. He surrended and left. (if he just stay there, he will win, beacuase my time is runing out).hahahahaha, ROFL，🤣🤣🤣🤣🤣🤣🤣🤣..hahahahaha, ROFL，🤣🤣🤣🤣🤣🤣🤣🤣..hahahahaha, ROFL，🤣🤣🤣🤣🤣🤣🤣🤣..hahahahaha, ROFL，🤣🤣🤣🤣🤣🤣🤣🤣..hahahahaha, ROFL，🤣🤣🤣🤣🤣🤣🤣🤣..hahahahaha, ROFL，🤣🤣🤣🤣🤣🤣🤣🤣..hahahahaha, ROFL，🤣🤣🤣🤣🤣🤣🤣🤣..hahahahaha, ROFL，🤣🤣🤣🤣🤣🤣🤣🤣..hahahahaha, ROFL，🤣🤣🤣🤣🤣🤣🤣🤣..hahahahaha, ROFL，🤣🤣🤣🤣🤣🤣🤣🤣..hahahahaha, ROFL，🤣🤣🤣🤣🤣🤣🤣🤣..hahahahaha, ROFL，🤣🤣🤣🤣🤣🤣🤣🤣..hahahahaha, ROFL，🤣🤣🤣🤣🤣🤣🤣🤣..hahahahaha, ROFL，🤣🤣🤣🤣🤣🤣🤣🤣..hahahahaha, ROFL，🤣🤣🤣🤣🤣🤣🤣🤣..hahahahaha, ROFL，🤣🤣🤣🤣🤣🤣🤣🤣..hahahahaha, ROFL，🤣🤣🤣🤣🤣🤣🤣🤣..
